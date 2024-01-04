@@ -1,0 +1,22 @@
+<div class="card">
+<h2>Add Question Here...</h2>
+<div>
+    <form [formGroup]="question_section" (ngSubmit)="onSubmit()">
+    <div style="margin: 5px;">
+        <input type="text" name="question" formControlName="question" placeholder="Type a question here....">
+    </div>
+    <div formArrayName="options" style="margin: 10px;">
+    <div *ngFor="let control of options.controls; let i = index" style="margin-top: 10px;">
+    <ng-container [formGroupName]="i" style="margin: 10px;">
+        <input type="text"  formControlName="option" placeholder="Add Answer option Here....">
+        <input type="checkbox"  formControlName="status"style="margin-left: 10px">
+    </ng-container>
+    </div>
+    </div>
+    <a (click)="addNewOption()" style="color: blue; margin-left: 10px;">+add another Answer....</a>
+    <div style="align-content: center;">
+    <button type="submit" style="margin-left: 40%;">submit</button>
+    </div>
+    </form>
+</div>
+</div>

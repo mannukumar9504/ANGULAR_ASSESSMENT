@@ -1,0 +1,15 @@
+<div>
+    <h3>Please tell us about yourself *</h3>
+    <div>
+        <textarea name="userInfo" (change)="getTextValue($event)"></textarea>
+    </div>
+    
+        <div *ngFor="let option of optionList">
+            {{option.question}}
+            <div *ngFor="let opt of option.options">
+                <input type="checkbox" value="{{opt.status}}"> {{opt.option}}
+            </div>
+        </div>
+        <button type="button" (click)="openDialog()">add questions.....</button>
+        <button type="button" (click)="gotoPreviewPage()">preview page</button>
+</div>

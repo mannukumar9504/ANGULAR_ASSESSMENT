@@ -1,0 +1,13 @@
+<div>
+    <h2>please tell us about your self</h2>
+    <p>{{userInfo}}</p>
+    <div>
+        <div *ngFor="let option of list">
+            {{option.question}}
+            <div *ngFor="let opt of option.options">
+                <p style="font-weight: bold;">{{opt.option}}</p>
+            </div>
+        </div>
+    </div>
+    <a routerLink=""  href="" style="color: blue">back to forms builder...</a>
+</div>
