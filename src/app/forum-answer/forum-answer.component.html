@@ -1,6 +1,10 @@
-<div>
+<mat-card style="margin: 5% 30%; width : 400px;">
+    <mat-card-content>
+<div style="border: 1px solid black; padding: 4%;">
     <h2>please tell us about your self</h2>
+    <div style="border: 1px solid black; width: 200px; margin-bottom: 10px;">
     <p>{{userInfo}}</p>
+    </div>  
     <div>
         <div *ngFor="let option of list">
             {{option.question}}
@@ -11,3 +15,5 @@
     </div>
     <a routerLink=""  href="" style="color: blue">back to forms builder...</a>
 </div>
+</mat-card-content>
+</mat-card>

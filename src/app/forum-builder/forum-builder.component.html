@@ -1,4 +1,6 @@
-<div>
+<mat-card style="margin: 5% 30%; width : 400px;">
+    <mat-card-content>
+<div style="border: 1px solid black; padding: 2% 2% 5% 5%;" >
     <h3>Please tell us about yourself *</h3>
     <div>
         <textarea name="userInfo" (change)="getTextValue($event)"></textarea>
@@ -10,6 +12,8 @@
                 <input type="checkbox" value="{{opt.status}}"> {{opt.option}}
             </div>
         </div>
-        <button type="button" (click)="openDialog()">add questions.....</button>
-        <button type="button" (click)="gotoPreviewPage()">preview page</button>
+        <a  (click)="openDialog()" style="margin-right: 10px; color: blue;">add questions.....</a>
+        <button type="button" mat-raised-button color="primary" (click)="gotoPreviewPage()">preview page</button>
 </div>
+</mat-card-content>
+</mat-card>

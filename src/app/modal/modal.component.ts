@@ -1,13 +1,15 @@
 import { Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material/dialog'
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule, FormControl, FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { ModalService } from './modal.service';
 
 @Component({
   selector: 'app-modal',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, MatButtonModule, MatCardModule],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css'
 })
