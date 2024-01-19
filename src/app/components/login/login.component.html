@@ -1,0 +1,63 @@
+<div class="main_section">
+    <mat-card>
+        <mat-card-content>
+            <div>
+                <h2>{{registration_flag ? 'Create Account': 'Get Access'}}</h2>
+            </div>
+            <div>
+                @if(!registration_flag) {
+                <form [formGroup]="login_section" (ngSubmit)="login()">
+                    <mat-form-field>
+                        <mat-label>User Id</mat-label>
+                        <input matInput placeholder="Please enter userId here..." formControlName="userId">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Please enter password here..." formControlName="password">
+                    </mat-form-field>
+                    <div>
+                        <button type="submit" mat-raised-button color="primary">Login</button>
+                    </div>
+                </form>
+            } @else {
+                <form [formGroup] = "registration_section" (ngSubmit)="registerUser()">
+                <mat-form-field>
+                    <mat-label>First Name</mat-label>
+                    <input matInput placeholder="Please enter first name here..." formControlName="firstName">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Middle Name</mat-label>
+                    <input matInput placeholder="Please enter Middle name here..." formControlName="middleName">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Last Name</mat-label>
+                    <input matInput placeholder="Please enter Last name here..." formControlName="lastName">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Email Id</mat-label>
+                    <input matInput placeholder="Please enter valid email id here..." type="email" formControlName="email">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Mobile Number</mat-label>
+                    <input matInput placeholder="Please enter Mobile number here..." formControlName="mobile" maxlength="10">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Please enter password here..." type="password" formControlName="password">
+                </mat-form-field>
+                    <div>
+                        <button type="submit" mat-raised-button color="primary">Submit</button>
+                    </div>
+                </form>
+
+            }
+                <a (click)="toggleForm()">{{ registration_flag ? 'Back to login....': 'Regiter yourself.....'}}</a>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

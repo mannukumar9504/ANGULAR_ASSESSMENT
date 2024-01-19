@@ -1,0 +1,26 @@
+.main_section {
+    width: 500px;
+    align-content: center;
+    align-items: center;
+    padding: 10% 33% 22% 34%;
+    background: url('../../../assets/login.jpg');
+}
+mat-card {
+    border: 1px solid blue;
+    box-shadow: 20px 40px lightblue;
+    align-content: center;
+    background-color: blanchedalmond;
+    position: relative;
+    
+}
+mat-form-field {
+    margin-right: 20px;
+}
+mat-label {
+    padding: 10px;
+}
+a {
+    margin-left: 70%;
+    color: blue;
+    cursor: pointer;
+}

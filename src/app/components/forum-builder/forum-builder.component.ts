@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalComponent } from '../modal/modal.component';
-import { ModalService } from '../modal/modal.service';
+import { ModalComponent } from '../../modal/modal.component';
+import { ModalService } from '../../modal/modal.service';
 import { Router } from '@angular/router';
-import {MatSnackBar} from '@angular/material/snack-bar'
+import { MatSnackBar } from '@angular/material/snack-bar'
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card'
 

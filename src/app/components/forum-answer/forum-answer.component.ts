@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { ModalService } from '../modal/modal.service';
+import { ModalService } from '../../modal/modal.service';
 import { MatSnackBar} from '@angular/material/snack-bar'
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
