@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input'
 import {ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { LoginService } from './login.service';
 import { Router } from '@angular/router';
+import CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-login',
@@ -36,12 +37,20 @@ export class LoginComponent {
  * @returns 
  */
   login() {
+      let password = (this.login_section.value.password || '');
+      let userId = (this.login_section.value.userId || '');
+
+      this.login_section.value.password = CryptoJS.AES.encrypt(password, userId).toString(); //email
+      console.log("this===>",this.login_section.value);
       const sub = this.loginService.login(this.login_section.value).subscribe(
         {
           next: (currentObserverValue) => {
-            this.router.navigate(['/','forum/builder']);
+            console.log("it is working-->");
+            document.cookie =  `auth-token = ${currentObserverValue.data.token}`;
+            this.router.navigate(['/forum/builder']);
           },
           error: (error) => {
+            console.log("error===>",error);
             //todo
           },
           complete: () => {
