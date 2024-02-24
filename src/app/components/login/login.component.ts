@@ -41,16 +41,13 @@ export class LoginComponent {
       let userId = (this.login_section.value.userId || '');
 
       this.login_section.value.password = CryptoJS.AES.encrypt(password, userId).toString(); //email
-      console.log("this===>",this.login_section.value);
       const sub = this.loginService.login(this.login_section.value).subscribe(
         {
           next: (currentObserverValue) => {
-            console.log("it is working-->");
             document.cookie =  `auth-token = ${currentObserverValue.data.token}`;
             this.router.navigate(['/forum/builder']);
           },
           error: (error) => {
-            console.log("error===>",error);
             //todo
           },
           complete: () => {
@@ -62,12 +59,14 @@ export class LoginComponent {
  * function to register new user
  */
   registerUser() {
+    console.log("regsitration_section==>",this.registration_section.value);
     const regSub =  this.loginService.registerUser(this.registration_section.value).subscribe(
       {
         next: (currentObserverValue) => {
           this.toggleForm();
         },
         error: (error) => {
+          console.log("error in component===>",error);
           //todo
         },
         complete: () => {

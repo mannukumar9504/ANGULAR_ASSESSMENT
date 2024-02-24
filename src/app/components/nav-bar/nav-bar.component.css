@@ -1,0 +1,37 @@
+.nav {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  background-color: #3f51b5;
+  color: #fff;
+  display: flex;
+  padding: 0 16px;
+  align-items: center;
+  height: 56px;
+  font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+.menu {
+    width: 85%;
+}
+ul li {
+    display: inline;
+    margin-left: 20px;
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+ul li a:hover {
+    background-color: white;
+    border: 2px solid rgb(30, 107, 43);
+    border-radius: 10%;
+    color: rgb(172, 198, 23);
+    cursor: pointer;
+    z-index: 999;
+    
+}
+.profile {
+    cursor: pointer;
+}

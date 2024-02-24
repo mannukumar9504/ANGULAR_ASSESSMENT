@@ -21,6 +21,7 @@ export class LoginService {
    * @returns 
    */
   registerUser(list: any): Observable<any> {
+    console.log("url===>",this.url);
     return this.http.post<any>(`${this.url}/register/user`, list);
   }
 }

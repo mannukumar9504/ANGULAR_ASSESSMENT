@@ -1,16 +1,17 @@
 .main_section {
-    width: 500px;
+    position: fixed;
     align-content: center;
     align-items: center;
     padding: 10% 33% 22% 34%;
     background: url('../../../assets/login.jpg');
+    height: 100%;
 }
 mat-card {
     border: 1px solid blue;
     box-shadow: 20px 40px lightblue;
     align-content: center;
     background-color: blanchedalmond;
-    position: relative;
+    z-index: 2;
     
 }
 mat-form-field {
@@ -23,4 +24,20 @@ a {
     margin-left: 70%;
     color: blue;
     cursor: pointer;
+}
+.dark-theme {
+     mat-card {
+        color: white;
+        background-color: cornflowerblue;
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 750px) {
+    .main_section {
+        padding: 20% 12% 0% 4%;
+        min-width: 100%;
+    }
+    mat-card {
+        max-width: 250px;
+    }
+
 }
